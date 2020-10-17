@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(intent);
                         break;
                     case 1:
-                        intent = new Intent(MainActivity.this, listado_autos_personalizado.class);
+                        intent = new Intent(MainActivity.this, ListadoAutosPersonalizado.class);
                         startActivity(intent);
                         break;
                 }
