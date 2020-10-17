@@ -48,18 +48,20 @@ public class CrearAuto extends AppCompatActivity {
         color.setAdapter(adapter3);
     }
     public void guardar(View v){
-        String plac, marc, model, col;
-        Integer prec;
-        Automovil p;
-        plac = placa.getText().toString();
-        prec = Integer.parseInt(precio.getText().toString());
-        marc = marca.getSelectedItem().toString();
-        model = modelo.getSelectedItem().toString();
-        col = color.getSelectedItem().toString();
-        p = new Automovil(fotoAleatoria(fotos), plac, marc, model, col, prec);
-        p.guardar();
+        if(Validar()) {
+            String plac, marc, model, col;
+            String prec;
+            Automovil p;
+            plac = placa.getText().toString();
+            marc = marca.getSelectedItem().toString();
+            model = modelo.getSelectedItem().toString();
+            col = color.getSelectedItem().toString();
+            prec = precio.getText().toString();
+            p = new Automovil(fotoAleatoria(fotos), plac, marc, model, col, prec);
+            p.guardar();
 
-        Toast.makeText(this, getString(R.string.mensaje_guardado),Toast.LENGTH_LONG).show();
+            Toast.makeText(this, getString(R.string.mensaje_guardado), Toast.LENGTH_LONG).show();
+        }
     }
     public void borrar(View v){
         placa.setText("");
@@ -75,6 +77,23 @@ public class CrearAuto extends AppCompatActivity {
         Random r = new Random();
         fotoSeleccionada = r.nextInt(fotos.length);
         return fotos[fotoSeleccionada];
+    }
+
+    public Boolean Validar(){
+        placa = findViewById(R.id.txtPlaca);
+        precio = findViewById(R.id.txtPrecio);
+        if(placa.getText().toString().isEmpty()){
+            placa.setError(getString(R.string.mensaje_error));
+            placa.requestFocus();
+            return  false;
+        }
+        if(precio.getText().toString().isEmpty()){
+            precio.setError(getString(R.string.mensaje_error));
+            precio.requestFocus();
+            return  false;
+        }
+        return true;
+
     }
 
 }

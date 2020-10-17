@@ -6,9 +6,9 @@ public class Automovil {
     private String marca;
     private String modelo;
     private String color;
-    private Integer precio;
+    private String precio;
 
-    public Automovil(int foto, String placa, String marca, String modelo, String color, Integer precio) {
+    public Automovil(int foto, String placa, String marca, String modelo, String color, String precio) {
         this.foto = foto;
         this.placa = placa;
         this.marca = marca;
@@ -57,12 +57,13 @@ public class Automovil {
         this.color = color;
     }
 
-    public int getPrecio() {
+    public String getPrecio() {
         return precio;
     }
 
-    public void setPrecio(Integer precio) {
+    public void setPrecio(String precio) {
         this.precio = precio;
     }
+
     public  void  guardar(){ Datos.guardar(this);}
 }
