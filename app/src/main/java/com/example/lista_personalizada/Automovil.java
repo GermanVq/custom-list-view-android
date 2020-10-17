@@ -64,5 +64,5 @@ public class Automovil {
     public void setPrecio(Double precio) {
         this.precio = precio;
     }
-
+    public  void  guardar(){ Datos.guardar(this);}
 }
