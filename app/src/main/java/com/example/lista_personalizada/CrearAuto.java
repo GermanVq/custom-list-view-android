@@ -9,6 +9,8 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import java.util.Random;
+
 public class CrearAuto extends AppCompatActivity {
     private EditText placa, precio;
     private Spinner marca, modelo, color;
@@ -21,7 +23,7 @@ public class CrearAuto extends AppCompatActivity {
         placa = findViewById(R.id.txtPlaca);
         precio = findViewById(R.id.txtPrecio);
 
-        fotos = new int[3];
+        fotos = new int[4];
         fotos[0] = R.drawable.carro1;
         fotos[1] = R.drawable.carro2;
         fotos[2] = R.drawable.carro3;
@@ -47,15 +49,32 @@ public class CrearAuto extends AppCompatActivity {
     }
     public void guardar(View v){
         String plac, marc, model, col;
-        String prec;
+        Integer prec;
         Automovil p;
         plac = placa.getText().toString();
-        prec = precio.getText().toString();
-        marc = marca.getAdapter().toString();
-        model = modelo.getAdapter().toString();
-        col = color.getAdapter().toString();
+        prec = Integer.parseInt(precio.getText().toString());
+        marc = marca.getSelectedItem().toString();
+        model = modelo.getSelectedItem().toString();
+        col = color.getSelectedItem().toString();
+        p = new Automovil(fotoAleatoria(fotos), plac, marc, model, col, prec);
+        p.guardar();
 
         Toast.makeText(this, getString(R.string.mensaje_guardado),Toast.LENGTH_LONG).show();
+    }
+    public void borrar(View v){
+        placa.setText("");
+        marca.equals(0);
+        modelo.equals(0);
+        color.equals(0);
+        precio.setText("");
+        placa.requestFocus();
+    }
+
+    public int fotoAleatoria(int fotos[]){
+        int fotoSeleccionada;
+        Random r = new Random();
+        fotoSeleccionada = r.nextInt(fotos.length);
+        return fotos[fotoSeleccionada];
     }
 
 }

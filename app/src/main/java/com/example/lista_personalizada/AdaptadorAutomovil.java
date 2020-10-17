@@ -37,7 +37,7 @@ public class AdaptadorAutomovil extends BaseAdapter {
     }
 
     @Override
-    public View getView(int i, View convertView, ViewGroup viewGroup) {
+    public View getView(int i, View convertView, ViewGroup parent) {
         res = contexto.getResources();
         View v = convertView;
 
@@ -48,6 +48,7 @@ public class AdaptadorAutomovil extends BaseAdapter {
         TextView placa = v.findViewById(R.id.lblPlaca);
         TextView marca = v.findViewById(R.id.lblMarca);
         TextView modelo = v.findViewById(R.id.lblModelo);
+        TextView color = v.findViewById(R.id.lblColor);
         TextView precio = v.findViewById(R.id.lblPrecio);
 
 
@@ -58,6 +59,7 @@ public class AdaptadorAutomovil extends BaseAdapter {
         placa.setText(p.getPlaca());
         marca.setText(p.getMarca());
         modelo.setText(p.getModelo());
+        color.setText(p.getColor());
         precio.setText(p.getPrecio());
 
 

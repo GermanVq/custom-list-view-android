@@ -6,8 +6,8 @@
 
     <ImageView
         android:id="@+id/imgFoto"
-        android:layout_width="207dp"
-        android:layout_height="71dp"
+        android:layout_width="258dp"
+        android:layout_height="123dp"
         android:layout_weight="1"
         app:srcCompat="@drawable/carro1" />
 
@@ -21,6 +21,7 @@
             android:id="@+id/lblPlaca"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center"
             android:textSize="18sp"
             android:textStyle="bold" />
 
@@ -28,18 +29,28 @@
             android:id="@+id/lblMarca"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center"
             android:textSize="18sp" />
 
         <TextView
             android:id="@+id/lblModelo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/lblColor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
             android:textSize="18sp" />
 
         <TextView
             android:id="@+id/lblPrecio"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center"
             android:textSize="18sp" />
     </LinearLayout>
 
