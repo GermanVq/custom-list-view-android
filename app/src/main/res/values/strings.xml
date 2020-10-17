@@ -1,3 +1,10 @@
 <resources>
-    <string name="app_name">Lista_Personalizada</string>
+    <string name="app_name">ListaPersonalizada</string>
+    <string name="crear">REGISTRAR CARRO</string>
+    <string name="listar">LISTAR CARRO</string>
+
+    <string-array name="opciones">
+        <item>@string/crear</item>
+        <item>@string/listar</item>
+    </string-array>
 </resources>
